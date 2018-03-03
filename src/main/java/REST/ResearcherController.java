@@ -2,8 +2,6 @@ package REST;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,14 +11,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 @RestController
-public class DoctorController
+public class ResearcherController
 {
-    @RequestMapping("/doctor")
-    public ResponseEntity Doctor()
+    @RequestMapping("/researcher")
+    public ResponseEntity Researcher()
     {
         try
         {
-            byte[] file = Files.readAllBytes(Paths.get("src\\main\\resources\\doctor.html"));
+            byte[] file = Files.readAllBytes(Paths.get("src\\main\\resources\\default.html"));
             return ResponseEntity.status(HttpStatus.OK).body(new String(file, Charset.defaultCharset()));
         }
         catch (IOException e)
@@ -28,5 +26,4 @@ public class DoctorController
             throw new RuntimeException(e.getClass().toString());
         }
     }
-
 }
