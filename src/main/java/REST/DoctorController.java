@@ -2,9 +2,8 @@ package REST;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -13,9 +12,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 @RestController
+@RequestMapping("/doctor")
 public class DoctorController
 {
-    @RequestMapping("/doctor")
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity Doctor()
     {
         try
