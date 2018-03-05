@@ -1,29 +1,16 @@
 package REST;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-@RestController
+@Controller
+@RequestMapping("/researcher")
 public class ResearcherController
 {
-    @RequestMapping("/researcher")
-    public ResponseEntity Researcher()
+    @RequestMapping(method = RequestMethod.GET)
+    public String Researcher()
     {
-        try
-        {
-            byte[] file = Files.readAllBytes(Paths.get("src\\main\\resources\\default.html"));
-            return ResponseEntity.status(HttpStatus.OK).body(new String(file, Charset.defaultCharset()));
-        }
-        catch (IOException e)
-        {
-            throw new RuntimeException(e.getClass().toString());
-        }
+        return "default";
     }
 }
