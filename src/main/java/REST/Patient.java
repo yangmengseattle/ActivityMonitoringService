@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Patient
 {
     int id;
+    String name;
     String treatment;
     int timestamp;
     static ArrayList<Patient> patients = new ArrayList<>();
@@ -28,7 +29,7 @@ public class Patient
         }
 
         // TODO: create new patient based on file parameters
-        Patient patient = new Patient(id, "Needs 30 minutes of exercise per day.", 0);
+        Patient patient = new Patient(id, "Henry Billingsworth", "Needs 30 minutes of exercise per day.", 0);
         patients.add(patient);
         return patient;
     }
@@ -39,9 +40,10 @@ public class Patient
         this.timestamp = timestamp;
     }
 
-    public Patient(int id, String treatment, int timestamp)
+    public Patient(int id, String name, String treatment, int timestamp)
     {
         this.id = id;
+        this.name = name;
         this.treatment = treatment;
         this.timestamp = timestamp;
     }
