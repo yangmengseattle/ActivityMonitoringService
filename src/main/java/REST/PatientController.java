@@ -26,6 +26,8 @@ public class PatientController
         model.addAttribute("avgNap", "0.68");       // Dummy data
         model.addAttribute("bikeGoal", "72");       // Dummy data
         model.addAttribute("bikeActual", "62");     // Dummy data
+        model.addAttribute("stepsGoal", "1500");     // Dummy data
+        model.addAttribute("stepsActual", "1200");   // Dummy data
 
         // Return the doctor page with all the data filled in
         return "doctor";
@@ -46,6 +48,8 @@ public class PatientController
         model.addAttribute("avgNap", "0.68 hrs");   // Dummy data
         model.addAttribute("bikeGoal", "72");       // Dummy data
         model.addAttribute("bikeActual", "62");     // Dummy data
+        model.addAttribute("stepsGoal", "1500");     // Dummy data
+        model.addAttribute("stepsActual", "1200");   // Dummy data
 
         return "doctor";
     }

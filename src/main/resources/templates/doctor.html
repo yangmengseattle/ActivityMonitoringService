@@ -82,11 +82,16 @@
                 <thead>
                 <tr>
                     <th>Exercise Machine</th>
-                    <th>Goal Time</th>
-                    <th>Actual Time</th>
+                    <th>Goal</th>
+                    <th>Actual</th>
                 </tr>
                 </thead>
                 <tbody>
+                <tr>
+                    <td scope="row">Treadmill</td>
+                    <td th:text="'' + ${stepsGoal} + ' steps'"/>
+                    <td th:text="'' + ${stepsActual} + ' steps'"/>
+                </tr>
                 <tr>
                     <td scope="row">Bike</td>
                     <td th:text="'' + ${bikeGoal} + ' minutes'"/>
@@ -107,9 +112,16 @@
             <li class="list-group-item" th:text="'Average Bedtime: ' + ${avgBed}"></li>
             <li class="list-group-item" th:text="'Average Wakeup: ' + ${avgWake}"></li>
             <li class="list-group-item" th:text="'Average Sleep Length: ' + ${avgSleep} + ' hours'"></li>
-            <li class="list-group-item" th:text="'Average Time Napping: ' + ${avgNap} + ' hours'"></li>
         </ul>
-        <img class="card-img-bottom" src="holder.js/100px250" alt="Card image cap"/>
+    </div>
+    <br/>
+    <br/>
+    <div class="card" style="width: 40rem;">
+      <div class="card-body">
+        <h4 class="card-title">Food Type Distribution</h4>
+        <p class="card-text">Types of food eaten over the past 7 days</p>
+      </div>
+      <img class="card-img-bottom" src="food.png" alt="Food types consumed"/>
     </div>
     <br/>
     <br/>
